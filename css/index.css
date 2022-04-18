@@ -84,8 +84,8 @@
 
 /* 첫번째 페이지 텍스트 */
 .Home .main_text .text {
-    width: 450px;
-    height: 250px;
+    width: 650px;
+    height: 450px;
     font-size: 50px;
     display: flex;
     justify-content: center;
@@ -151,6 +151,16 @@
     border-bottom: 3px solid orange
 }
 
+.About_me .Poto img {
+    border-radius: 50px;
+}
+
+.About_me .me {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
 .About_me .adress {
     display: flex;
     flex-wrap: wrap;
@@ -192,23 +202,19 @@
 .skill .title {
     font-size: 50px;
     margin-top: 84px;
-    flex: 1 1 100%;
+    width: 100%;
     text-align: center;
     color: #eee;
+    height: 50px;
 }
 
 .my_skill {
     display: flex;
-}
-
-.Frontend {
-    flex-direction: column;
+    align-items: center;
 }
 
 .skill_continer {
-    width: 300px;
     display: flex;
-    flex-wrap: wrap;
 }
 
 .skill .title span {
@@ -219,22 +225,17 @@
     width: 150px;
     text-align: center;
     cursor: pointer;
+    padding-bottom: 50px;
+    font-size: 50px;
 }
 
-.skill .skills .front {
-    border-bottom: 3px solid #000;
-}
-
-.skill .skills .img_box.on {
+.skill .skills .skill_continer.on .img_box {
     transform: rotateY(-180deg);
-}
-
-.rights .skill_title {
-    border-right: 3px solid #000;
 }
 
 .skill .skills {
     display: flex;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
     font-size: 30px;
@@ -243,7 +244,10 @@
     margin: 20px;
     padding: 10px;
     box-shadow: 5px 5px 5px 5px rgba(255, 255, 255, 0.5);
-    background: #fff;
+    background: #fff;   
+    margin-bottom: 15vh;
+    height: 450px;
+    width: 1500px;
 }
 
 .skill .skills .img_box {
@@ -264,19 +268,21 @@
     width: 100%;
     height: 100%;
     text-align: center;
+    font-size: 30px;
 }
 
 .pBox {
-    width: 80px;
-    height: 80px;
+    width: 130px;
+    height: 130px;
     position: absolute;
     line-height: 80px;
-    font-size: 20px;
+    font-size: 30px;
+    padding-top: 25px;
 }
 
 .skill .skills .skill_img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     background-size: contain;
     background-repeat: no-repeat;
     margin: 10px;
@@ -302,15 +308,21 @@
     background-image: url(../img/sql.png);
 }
 
+.skill .skills .react {
+    background-image: url(../img/react.png);
+}
+
+.skill .skills .vue {
+    background-image: url(../img/vue.png);
+}
+
+
 /* 네번째 페이지 */
 .Web_site {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    /* display: flex; */
     font-family: 'Black Han Sans', sans-serif;
-    /* flex-wrap: wrap;
-    justify-content: center; */
     transition: all 0.5s;
     border-bottom: 20px solid orange;
 }
@@ -318,7 +330,6 @@
 .Web_site .title {
     font-size: 50px;
     margin-top: 84px;
-    /* flex: 1 1 100%; */
     text-align: center;
 }
 
@@ -333,7 +344,7 @@
     height: 500px;
     max-width: 70%;
     margin: 0 auto;
-    padding-top: 100px;
+    padding-top: 160px;
 }
 
 .slideOuter .slick-slide 
@@ -362,27 +373,22 @@
 
 .slideOuter .slide1 
 {
-    background-image: url(../img/naver.jpg)
+    background-image: url(../img/NESON.PNG)
 }
 
 .slideOuter .slide2
 {
-    background-image: url(../img/google.jpg)
+    background-image: url(../img/starbuck.PNG)
 }
 
 .slideOuter .slide3
 {
-    background-image: url(../img/daum.jpg)
+    background-image: url(../img/gocamping.PNG)
 }
 
 .slideOuter .slide4
 {
-    background-image: url(../img/hanbit.JPG)
-}
-
-.slideOuter .slide5
-{
-    background-image: url(../img/nexen.JPG)
+    background-image: url(../img/ekectric.png)
 }
 
 .slick-arrow
@@ -448,4 +454,11 @@
     text-align: center;
     font-size: 20px;
     font-family: 'Zen Kurenaido', sans-serif;
+}
+
+.slideOuter .text strong
+{
+    border-bottom: 1px solid #999;
+    display: inline-block;
+    margin-bottom: 10px;
 }

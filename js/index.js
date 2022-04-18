@@ -234,78 +234,28 @@ $('.header .nav ul li a').on('click', function (e) {
 
 $('.skill .skills .skill_title').on('click', function () {
 
-    if($(this).parent().hasClass('Frontend'))
-    {
-        $(this).next().find('*').toggleClass('on');
-    }
-    else 
-    {
-        $(this).siblings().toggleClass('on');
-    }
+    $(this).next().toggleClass('on');
 
-    check($(this))
+
+    if(!check)
+    {
+       easyPieChart_drow('.in_text2',arrPercent, arrChartColor);
+       check = true;
+    }
+    else
+    {
+       $('.in_text2').each(function(idx){
+           $(this).attr({'data-percent' : 0})
+       })
+       check = false;
+    }
  })
 
-var check1 = false; 
-var check2 = false; 
-var check3 = false; 
+var check = false; 
 
-var arrPercent1 = [90, 80, 70, 60, 50]
-var arrChartColor1 = ['#e8670c', '#ff9e5a', '#ff710d', '#7f4f2d', '#cc5b0b', '#cc3a1a'];
-var arrPercent2 = [50, 60, 70, 80, 90]
-var arrChartColor2 = ['#ffdddd', '#ddffe5', '#ddeeff', '#ddffdd', '#f6ddff', '#e5ddff'];
-var arrPercent3 = [70, 100, 60, 80, 30]
-var arrChartColor3 = ['#f2e2c6', '#fbdea2', '#a3abe0', '#d2bce1', '#b4585a', '#76aa22'];
-var arrPercent_end = [0, 0, 0, 0, 0]
+var arrPercent = [90, 80, 90, 60, 60, 60, 20]
+var arrChartColor = ['#e8670c', '#ff9e5a', '#ff710d', '#7f4f2d', '#cc5b0b', '#cc3a1a'];
 
- function check(name)
- {
-     if($(name).parent().hasClass('Frontend'))
-     {
-         if(!check1)
-         {
-            easyPieChart_drow('.Frontend .in_text2',arrPercent1, arrChartColor1);
-            check1 = true;
-         }
-         else
-         {
-            $('.Frontend .in_text2').each(function(idx){
-                $(this).attr({'data-percent' : 0})
-            })
-            check1 = false;
-         }
-     }
-     else if($(name).parent().hasClass('Backend'))
-     {
-        if(!check2)
-        {
-            easyPieChart_drow('.Backend .in_text2', arrPercent2, arrChartColor2);
-            check2 = true;
-        }
-        else
-        {
-           $('.Backend .in_text2').each(function(){
-               $(this).attr({ 'data-percent': 0})
-           })
-           check2 = false;
-        }
-     }
-     else if($(name).parent().hasClass('end'))
-     {
-        if(!check3)
-        {
-            easyPieChart_drow('.end .in_text2', arrPercent3, arrChartColor3);
-            check3 = true;
-        }
-        else
-        {
-           $('.end .in_text2').each(function(){
-               $(this).attr({ 'data-percent': 0})
-           })
-           check3 = false;
-        }
-     }
- }
 
 function easyPieChart_drow(name, arrPercent, arrChartColor)
 {
@@ -321,8 +271,8 @@ function easyPieChart_drow(name, arrPercent, arrChartColor)
             trackColor: '#efefef', // 트색 색상
             scaleColor: false, // 눈금선 색상
             lineCap: 'round', // 선의 끝 모양(butt, round, square)
-            lineWidth: 10, // 선의 폭
-            size: 75, // 원형차트의 크기
+            lineWidth: 20, // 선의 폭
+            size: 130, // 원형차트의 크기
             onStart: $.noop,
             onStop: $.noop,
             onStep: function (from, to, percent) {
